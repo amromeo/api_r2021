@@ -1,6 +1,8 @@
 # Association for Pathology Informatics R Workshop
 
-This introductory R workshop aims to teach participants with minimal programming experience the basics of the R statistical programming language for reproducible laboratory data analytics. R is a freely available programming environment that is aimed squarely at common activities in data analysis including complex data manipulation, statistical analysis, automation, and publication-quality data visualization. We will introduce basic concepts of R programming as well as more generalizable best practices in working with laboratory data. 
+## Welcome!
+
+This introductory R workshop aims to teach participants with little or no programming experience the basics of the R statistical programming language for reproducible laboratory data analytics. R is a freely available programming environment that is aimed squarely at common activities in data analysis including complex data manipulation, statistical analysis, automation, and publication-quality data visualization. We will introduce basic concepts of R programming as well as more generalizable best practices in working with laboratory data. 
 
 - Instructors: 
   * Daniel Herman
@@ -10,14 +12,16 @@ This introductory R workshop aims to teach participants with minimal programming
   * Joseph Rudolf
  
 
-## Pre-course work/requirements
+## Before you arrive...
 
-- Preferably two monitors (or two laptops), one for the Zoom conference software, and one in which you will work. (an IPad can serve as the Zoom platform in a pinch).
-- We will be utilizing Zoom Meeting for this workshop, please download and install the latest version [here](https://zoom.us/download).
-- The program that we will be using to interact with R during the course is called **RStudio**. We will be using a cloud based version of RStudio, hosted at [RStudio.Cloud](https://rstudio.cloud/), in our workshop.
-  - Please follow the instructions in [this presentation](https://drive.google.com/file/d/1hlPMuN_drjwbX4idk_H2A7imPjWPhoSN/view?usp=sharing) to setup an [RStudio.Cloud](https://rstudio.cloud/) account. 
-  - *Note: Some older internet browsers may not be compatible with RStudio.cloud. See [this web page](https://support.rstudio.com/hc/en-us/articles/227449447-Supported-browsers-for-RStudio-Connect) for additional information.*
-- While not required, we **highly** recommend installing RStudio Desktop on your laptop as well. See instructions below. While we won't be using it during the workshop, you'll need it for future R work.
+For the best experience, please have the following ready before the workshop begins:
+
+- Preferably two monitors (or two laptops), one for the Zoom conference software, and one in which you will work. 
+- Install the latest version of [Zoom](https://zoom.us/download).
+- Install the latest version of [Google Chrome](https://www.google.com/chrome/) as some [older browsers](https://support.rstudio.com/hc/en-us/articles/227449447-Supported-browsers-for-RStudio-Connect) may not be compatible with the RStudio application).
+- User specific usernames and passwords will be emailed to you shortly before the workshop. Please have these available. 
+- We may need to use RStudio Cloud as a backup training environment. Please sign up for a free account [here](https://rstudio.cloud/).
+- Join the pre-course technology/AV check sessions tentatively schedule for 7/14/2021 at 1pm ET- details are in the pre-course email.
 - Please complete the following survey so we can better understand your R experience and what you want out of the course: [API R Workshop Participant Survey](https://forms.gle/Xe3U71ZBZRmrP2E87).
 
 
