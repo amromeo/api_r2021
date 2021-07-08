@@ -12,9 +12,9 @@ This introductory R workshop aims to teach participants with little or no progra
   * [Joseph Rudolf](https://healthcare.utah.edu/fad/mddetail.php?physicianID=u6005682&name=joseph-w-rudolf)
  
 
-## Before you arrive...
+## Before you arrive
 
-### Get Ready
+### Get Ready...
 
 For the best experience, please have the following ready before the workshop begins:
 
@@ -23,7 +23,7 @@ For the best experience, please have the following ready before the workshop beg
 - Install the latest version of [Google Chrome](https://www.google.com/chrome/) as some [older browsers](https://support.rstudio.com/hc/en-us/articles/227449447-Supported-browsers-for-RStudio-Connect) may not be compatible with the RStudio application).
 - We may need to use RStudio Cloud as a backup training environment. Please sign up for a free account [here](https://rstudio.cloud/).
 
-### Get Set
+### Get Set...
 
 - User specific usernames and passwords will be emailed to you shortly before the workshop. Please have these available. 
 - Calendar invites with Zoom details will be sent prior to the workshop.
