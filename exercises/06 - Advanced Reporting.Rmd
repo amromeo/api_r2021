@@ -11,7 +11,7 @@ library(flexdashboard)
 library(tidyverse)
 
 
-covid <- read_csv("data/covid_testing.csv")
+covid <- read_csv("covid_testing.csv")
 ```
 
 Column {data-width=650}

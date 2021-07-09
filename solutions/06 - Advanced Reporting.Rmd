@@ -10,7 +10,7 @@ library(flexdashboard)
 library(tidyverse)
 library(plotly)
 library(DT)
-covid <- read_csv("../data/covid_testing.csv")
+covid_testing <- read_csv("covid_testing.csv")
 ```
 
 Row
@@ -19,7 +19,7 @@ Row
 ### Test Volumes Over Time
 
 ```{r, fig.width=12}
-volumes_plot <- ggplot(data = covid, mapping = aes(x = pan_day, fill = result)) +
+volumes_plot <- ggplot(data = covid_testing, mapping = aes(x = pan_day, fill = result)) +
   geom_bar(stat = "count")
 ggplotly(volumes_plot)
 ```
@@ -30,7 +30,7 @@ Row
 ### In Lab Turnaround Times
 
 ```{r}
-tat_plot <- ggplot(covid) +
+tat_plot <- ggplot(covid_testing) +
   geom_point(mapping = aes(x = pan_day, y = rec_ver_tat)) +
   ylim(0, 50)
 ggplotly(tat_plot)
@@ -39,7 +39,7 @@ ggplotly(tat_plot)
 ### Positive Result Details
 
 ```{r}
-covid_positive <- covid %>%
+covid_positive <- covid_testing %>%
   filter(result == "positive")
 datatable(covid_positive)
 ```
