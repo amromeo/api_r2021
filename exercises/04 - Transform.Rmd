@@ -7,7 +7,7 @@ title: "Transform Data"
 ```{r Your Turn 1, message=FALSE}
 library(tidyverse)  # Provides functions used throughout this session
 
-covid_testing <- read_csv("covid_testing.csv") #Read in data
+covid_testing <- read_csv("data/covid_testing.csv") #Read in data
 ```
 
 How can you confirm that you have successfully loaded the data file into Rstudio?
@@ -59,19 +59,15 @@ select(covid_testing, ends_with("tat"))
 #all of the above
 ```
 
-
-
-
-# line 65
-
-
 ## filter()
 
 ```{r}
+# Filters the covid testing dataset to just rows in which the mrn column is equal to 5000078
 filter(covid_testing, mrn == 5000078)
 ```
 
 ```{r}
+# Filters the covid testing dataset to just rows in which the last_name column is equal to "stark"
 filter(covid_testing, last_name=="stark")
 ```
 
@@ -82,29 +78,25 @@ Use the 3 code blocks below, and `filter()`, to show how you would filter the `c
 
 A. You work in a pediatric hospital so there shouldn't too many adults in the data set. Find every test for patients over age 80. The column in which age is found is named `age`. Assign the new data frame to the object `covid_testing_3a`.
 ```{r Your Turn 3a}
-covid_testing_3a <- filter(covid_testing, ________) #replace the ____ with a logical statement identifying tests for patients greater than 80
+#replace the ____ with a logical statement identifying tests for patients greater than 80
+covid_testing_3a <- filter(covid_testing, ________) 
 covid_testing_3a
 ```
 
 
 B. Do we have a lot of outreach work for COVID testing? Find all of the covid testing where the demographic group (`demo_group`) is equal to "client". Assign the new data frame to the object `covid_testing_3b`.
 ```{r Your Turn 3b}
+#replace the ____ with a logical statement identifying tests for patients with demo_group equal to "client"
 covid_testing_3b <- filter(covid_testing, ________)
 covid_testing_3b
 ```
 
 
-C. CHALLENGE: We may have some data anomolies in the data set. Find all of the covid testing where the patient class (column `patient_class`) is not entered. In these cases the value will be NA. NA stands for "not available". It is the way that R codes missing values.  [Hint: See slide titled "Logical Tests"]
+C. CHALLENGE (only if you have time): 
+We may have some data anomolies in the data set in the form of missing data. Missing data can happen for many reasons, quite often because it's just not entered. Find all of the covid testing where the patient class (column `patient_class`) is not entered. In these cases the value will be NA. NA stands for "not available". It is the way that R codes missing values.  [Hint: See slide titled "Logical Tests"]
 ```{r Your Turn 3c}
 
 ```
-
-
-
-
-# line 105
-
-
 
 ## Arrange
 
@@ -116,7 +108,7 @@ arrange(covid_testing, desc(mrn))  #Sort from largest to smallest MRN
 ## Your Turn 4
 The column `ct_result` contains the cycle threshold (Ct) for the real-time PCR that generated the final result.
 
-How might you use arrange() to determine the highest and lowest Ct result in the dataset? 
+How might you use arrange() to determine the highest and lowest Ct result in the dataset? (Hint: Try sorting the rows by the Ct result value) 
 
 ```{r Your Turn 4}
 arrange(covid_testing, __________)
@@ -126,13 +118,10 @@ arrange(covid_testing, __________)
 ## Pop Quiz
 
 ```{r pop quiz}
-toy_data <- data.frame(nums=c(20,100,3),chars=c("20","100","3"))
+toy_data <- data.frame(nums=c(50,1000,3),chars=c("50","1000","3"))
 arrange(toy_data,nums)
 arrange(toy_data,chars)
 ```
-
-
-# line 135
 
 ## Steps and the pipe
 
@@ -211,4 +200,3 @@ covid_testing %>%
 * Arrange cases, with `arrange()`  
 * Make new variables, with `mutate()`  
 * Connect operations with `%>%`  
-
