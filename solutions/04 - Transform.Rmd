@@ -7,7 +7,7 @@ title: "Transform Data"
 ```{r Your Turn 1, message=FALSE}
 library(tidyverse)  # Provides functions used throughout this session
 
-covid_testing <- read_csv("covid_testing.csv")
+covid_testing <- read_csv("covid_testing.csv") #Read in data
 ```
 
 How can you confirm that you have successfully loaded the data file into Rstudio?
@@ -46,7 +46,7 @@ covid_testing_2b
 ```
 
 
-## Select Challenge
+## Select Bonus Challenge
 
 If you have extra time try the following challenge:
 
@@ -59,19 +59,15 @@ select(covid_testing, ends_with("tat"))
 #all of the above
 ```
 
-
-
-
-# line 65
-
-
 ## filter()
 
 ```{r}
+# Filters the covid testing dataset to just rows in which the mrn column is equal to 5000078
 filter(covid_testing, mrn == 5000078)
 ```
 
 ```{r}
+# Filters the covid testing dataset to just rows in which the last_name column is equal to "stark"
 filter(covid_testing, last_name=="stark")
 ```
 
@@ -82,19 +78,23 @@ Use the 3 code blocks below, and `filter()`, to show how you would filter the `c
 
 A. You work in a pediatric hospital so there shouldn't too many adults in the data set. Find every test for patients over age 80. The column in which age is found is named `age`. Assign the new data frame to the object `covid_testing_3a`.
 ```{r Your Turn 3a}
-covid_testing_3a <- filter(covid_testing, age>80) #replace the ____ with a logical statement identifying tests for patients greater than 80
+#replace the ____ with a logical statement identifying tests for patients greater than 80
+covid_testing_3a <- filter(covid_testing, age>80) 
 covid_testing_3a
 ```
 
 
 B. Do we have a lot of outreach work for COVID testing? Find all of the covid testing where the demographic group (`demo_group`) is equal to "client". Assign the new data frame to the object `covid_testing_3b`.
 ```{r Your Turn 3b}
+#replace the ____ with a logical statement identifying tests for patients with demo_group equal to "client"
 covid_testing_3b <- filter(covid_testing, demo_group=='client')
 covid_testing_3b
 ```
 
 
-C. CHALLENGE: We may have some data anomolies in the data set. Find all of the covid testing where the patient class (column `patient_class`) is not entered. In these cases the value will be NA. NA stands for "not available". It is the way that R codes missing values.  [Hint: See slide titled "Logical Tests"]
+## Filter Bonus Challenge
+
+We may have some data anomalies in the data set. Find all of the covid testing where the patient class (column `patient_class`) is not entered. In these cases the value will be NA. NA stands for "not available". It is the way that R codes missing values.  [Hint: See slide titled "Logical Tests"]
 ```{r Your Turn 3c}
 
 ```

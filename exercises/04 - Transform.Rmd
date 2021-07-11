@@ -7,7 +7,7 @@ title: "Transform Data"
 ```{r Your Turn 1, message=FALSE}
 library(tidyverse)  # Provides functions used throughout this session
 
-covid_testing <- read_csv("data/covid_testing.csv") #Read in data
+covid_testing <- read_csv("covid_testing.csv") #Read in data
 ```
 
 How can you confirm that you have successfully loaded the data file into Rstudio?
@@ -46,7 +46,7 @@ covid_testing_2b
 ```
 
 
-## Select Challenge
+## Select Bonus Challenge
 
 If you have extra time try the following challenge:
 
@@ -92,10 +92,12 @@ covid_testing_3b
 ```
 
 
-C. CHALLENGE (only if you have time): 
-We may have some data anomolies in the data set in the form of missing data. Missing data can happen for many reasons, quite often because it's just not entered. Find all of the covid testing where the patient class (column `patient_class`) is not entered. In these cases the value will be NA. NA stands for "not available". It is the way that R codes missing values.  [Hint: See slide titled "Logical Tests"]
-```{r Your Turn 3c}
+## Filter Bonus Challenge (only if you have time)
 
+We may have some data anomalies in the data set. Find all of the covid testing where the patient class (column `patient_class`) is not entered. In these cases the value will be NA. NA stands for "not available". It is the way that R codes missing values.  [Hint: See slide titled "Logical Tests"]
+```{r Your Turn 3c}
+covid_testing_3c <- filter(covid_testing, is.na(patient_class))
+covid_testing_3c
 ```
 
 ## Arrange
