@@ -15,12 +15,10 @@ How can you confirm that you have successfully loaded the data file into Rstudio
 	1. The code that imported the data did not yield an error
 	2. Code that references `covid_testing` object runs without errors
 	3. The `covid_testing` object is present in the environment pane
-	4. All of the above
+	#4. All of the above
 
 
-
-
-## select()
+# select()
 
 ```{r select}
 select(covid_testing, mrn, last_name)   # select columns to keep
@@ -45,8 +43,7 @@ covid_testing_2b <- select(covid_testing, -first_name)
 covid_testing_2b
 ```
 
-
-## Select Bonus Challenge
+## Select Bonus Challenge (only if you have time)
 
 If you have extra time try the following challenge:
 
@@ -59,7 +56,8 @@ select(covid_testing, ends_with("tat"))
 #all of the above
 ```
 
-## filter()
+
+# filter()
 
 ```{r}
 # Filters the covid testing dataset to just rows in which the mrn column is equal to 5000078
@@ -91,22 +89,16 @@ covid_testing_3b <- filter(covid_testing, demo_group=='client')
 covid_testing_3b
 ```
 
-
-## Filter Bonus Challenge
+## Filter Bonus Challenge (only if you have time)
 
 We may have some data anomalies in the data set. Find all of the covid testing where the patient class (column `patient_class`) is not entered. In these cases the value will be NA. NA stands for "not available". It is the way that R codes missing values.  [Hint: See slide titled "Logical Tests"]
 ```{r Your Turn 3c}
-
+covid_testing_3c <- filter(covid_testing, ________)
+covid_testing_3c
 ```
 
 
-
-
-# line 105
-
-
-
-## Arrange
+# Arrange
 
 ```{r arrange}
 arrange(covid_testing, first_name) #Sort in alphabetical order
@@ -116,7 +108,7 @@ arrange(covid_testing, desc(mrn))  #Sort from largest to smallest MRN
 ## Your Turn 4
 The column `ct_value` contains the cycle threshold (Ct) for the real-time PCR that generated the final result.
 
-How might you use arrange() to determine the highest and lowest Ct result in the dataset? 
+How might you use arrange() to determine the highest and lowest Ct result in the dataset? (Hint: Try sorting the rows by the Ct result value contained in the column named `ct_value`)
 
 ```{r Your Turn 4}
 arrange(covid_testing, ct_value)
@@ -126,13 +118,11 @@ arrange(covid_testing, ct_value)
 ## Pop Quiz
 
 ```{r pop quiz}
-toy_data <- data.frame(nums=c(20,100,3),chars=c("20","100","3"))
+toy_data <- data.frame(nums=c(50,1000,3),chars=c("50","1000","3"))
 arrange(toy_data,nums)
 arrange(toy_data,chars)
 ```
 
-
-# line 135
 
 ## Steps and the pipe
 
@@ -161,24 +151,26 @@ Use `%>%` in the following chunk to write a sequence of functions that:
 
 3. Arrange the `pan_day` from highest to lowest so you can see most recent tests on top.
 
-Using <-, assign the result to a new variable, call it whatever you want.
-
-CHALLENGE: Use your mouse to select the name of the new data frame from the list of objects in the Environment tab in the upper-right pane of Rstudio. Answer the following questions:
-
-- Can you find the test that exceeded 10 hours in TAT?
-- What is the typical TAT for the PICU?
-- Given this data does it appear that there is a chronic problem in TAT for the PICU, or was this test an outlier?
+Using "<-", assign the result to a new variable, call it whatever you want.
 
 ```{r Your Turn 5}
 covid_testing %>% 
   filter(clinic_name=='picu') %>% #Here filter to the clinic with the name "picu"
   select(pan_day,rec_ver_tat) %>% #Here select the columns you want to keep
-  arrange(desc(pan_day))    #Here arrange the pan_day column from highest to lowest (check slide 42 the arrange section of this file to use the desc() function)
+  arrange(desc(pan_day))   #Here arrange the pan_day column from highest to lowest (HINT: See the arrange section of this file to see how to use the desc() function)
 ```
 
 
+## Pipe Bonus Challenge (only if you have time)
 
-## mutate
+Use your mouse to select the name of the new data frame from the list of objects in the Environment tab in the upper-right pane of Rstudio. Answer the following questions:
+
+- Can you find the test that exceeded 10 hours in TAT?
+- What is the typical TAT for the PICU?
+- Given this data does it appear that there is a chronic problem in TAT for the PICU, or was this test an outlier?
+
+
+# mutate
 
 ```{r}
 # The following code creates a data frame with a new column called c_r_tat_mins which contains the collect to receive TAT quantified in minutes.
@@ -211,4 +203,3 @@ covid_testing %>%
 * Arrange cases, with `arrange()`  
 * Make new variables, with `mutate()`  
 * Connect operations with `%>%`  
-
