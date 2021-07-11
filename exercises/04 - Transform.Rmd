@@ -187,7 +187,6 @@ covid_testing %>%
 	mutate(total_tat = _________)
 ```
 
-
 ## Replace a column with `mutate()`
 
 ```{r}
