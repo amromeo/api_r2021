@@ -93,7 +93,7 @@ covid_testing_3b
 
 We may have some data anomalies in the data set. Find all of the covid testing where the patient class (column `patient_class`) is not entered. In these cases the value will be NA. NA stands for "not available". It is the way that R codes missing values.  [Hint: See slide titled "Logical Tests"]
 ```{r Your Turn 3c}
-covid_testing_3c <- filter(covid_testing, is.na(patient_class))
+covid_testing_3c <- filter(covid_testing, ________)
 covid_testing_3c
 ```
 
@@ -111,6 +111,7 @@ The column `ct_value` contains the cycle threshold (Ct) for the real-time PCR th
 How might you use arrange() to determine the highest and lowest Ct result in the dataset? (Hint: Try sorting the rows by the Ct result value contained in the column named `ct_value`) 
 
 ```{r Your Turn 4}
+#replace the ____ with the name of the column you would like to arrange the dataframe by.
 arrange(covid_testing, __________)
 ```
 
