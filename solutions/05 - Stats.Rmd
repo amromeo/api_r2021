@@ -209,14 +209,10 @@ covid_testing_2 <- covid_testing %>%
   filter(result %in% c("positive", "negative"))
 
 covid_testing_2 %>%
-  group_by(payor_group_fac) %>%
-  summarize(n = n())
+  select(payor_group_fac, result)
 ```
 
 ```{r}
-covid_testing_2 %>%
-  select(payor_group_fac, result)
-
 # Generate counts
 tmp_table_tall <- covid_testing_2 %>% 
   group_by(payor_group_fac, result) %>%
@@ -226,7 +222,7 @@ tmp_table_tall
 
 # Pivot from tall to wide table
 tmp_table_wide <- tmp_table_tall %>%
-  spread(key = "result", value = "n") 
+  pivot_wider(id_cols = payor_group_fac, names_from = result, values_from = n)
 tmp_table_wide
 
 # Hypergeometric test for association
@@ -246,8 +242,8 @@ tmp <- covid_testing_2 %>%
   ungroup()
 
 tmp %>%
-  _________________   %>%
-  spread(key = "result", value = "n") %>%
+  filter(payor_group_fac %in% ________________)   %>%
+  pivot_wider(id_cols = payor_group_fac, names_from = result, values_from = n) %>%
   select(-payor_group_fac) %>%
   _________
 
@@ -262,7 +258,7 @@ tmp <- covid_testing_2 %>%
 
 tmp %>%
   filter(payor_group_fac %in% c("commercial", "government")) %>%
-  spread(key = "result", value = "n") %>%
+  pivot_wider(id_cols = payor_group_fac, names_from = result, values_from = n) %>%
   select(-payor_group_fac) %>%
   fisher.test()
 ```
