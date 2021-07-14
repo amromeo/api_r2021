@@ -168,7 +168,7 @@ Use your mouse to select the name of the new data frame from the list of objects
 
 - Can you find the test that exceeded 10 hours in TAT?
 - What is the typical TAT for the PICU?
-- Given this data does it appear that there is a chronic problem in TAT for the PICU, or was this test an outlier?
+- Given this data, does it appear that there is a chronic problem in TAT for the PICU, or was this test an outlier?
 
 
 # mutate
